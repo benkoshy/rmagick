@@ -96,7 +96,7 @@ module Magick
                  end
       else
         bgcolor = bgfill
-        canvas = Magick::Image.new(Integer(@width), Integer(@height)) { self.background_color = bgcolor }
+        canvas = Magick::Image.new(Integer(@width), Integer(@height)) { |image| image.background_color = bgcolor }
       end
       canvas[:desc] = @desc if @desc
       canvas[:title] = @title if @title
